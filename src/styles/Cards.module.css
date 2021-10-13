@@ -1,0 +1,9 @@
+.title{
+    color: white;
+    margin-top: 70px;
+}
+@media screen and (max-width:490px) {
+    .title{
+        margin-top: 100px;
+    }
+  }
