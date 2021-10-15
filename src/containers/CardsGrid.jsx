@@ -7,7 +7,7 @@ function CardsGrid({artistas,search}) {
         <div className="container">
                 <div className="row">
                     <div className="col mb-3 mt-4  text-uppercase" id="subtitle">
-                        <h2 className={styles.title}>Artistas</h2>
+                        <h2 className={styles.title} id='artistastitle'>Artistas</h2>
                     </div>
                     <center>
                     <div className="container">

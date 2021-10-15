@@ -4,7 +4,7 @@ function Card({artista}) {
     return (
         <div className="col-12 offset-md-0 col-md-6 col-lg-4 mb-4">
         
-        <div className="card" style={{"width": "15rem",height:'22rem'}}>
+        <div className="card animate__animated animate__fadeIn animate__delay-0.5" style={{"width": "15rem",height:'22rem'}}>
           <img src={artista.img} className="card-img-top img-fluid" alt={artista.nombre} style={{height: "170px"}}/>
           <div className="card-body">
             <h5 className="card-title">{artista.nombre}</h5>

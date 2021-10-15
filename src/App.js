@@ -5,14 +5,19 @@ import logo from "./img/logops4.png";
 function App() {
   const [cards, SetCards] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading,setLoading] = useState(false);
   const ConectarApi = async () => {
+    setLoading(true)
     const resp = await fetch(
       "https://rest-artistas-indieec.herokuapp.com/api/users"
     );
     const data = await resp.json();
     SetCards(data.usuarios);
+    setLoading(false)
   };
-  useEffect(() => ConectarApi(), []);
+  useEffect(() => {
+  ConectarApi()
+  }, []);
   return (
     <div className="App">
       <header>
@@ -54,7 +59,14 @@ function App() {
         </div>
         </div>
       </header>
-      <CardsGrid artistas={cards} search={search} />
+      <div>
+      {loading ? <><div className="text-center">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <p className="mt-2">Loading...</p>
+        </div></>: <CardsGrid artistas={cards} search={search} />}
+      </div>
     </div>
   );
 }
